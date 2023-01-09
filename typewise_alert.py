@@ -1,4 +1,4 @@
-from limit_configuration import *
+from configuration_limits import *
 def infer_breach(value, lowerLimit, upperLimit):
   if value < lowerLimit:
     return 'TOO_LOW'
