@@ -3,6 +3,7 @@ from breach_detecter import *
 from breach_classifier import *
 
 def check_and_alert(alertTarget, batteryChar, temperatureInC):
+  alert = None
   breachType =\
     classify_temperature_breach(batteryChar['coolingType'], temperatureInC)
   if alertTarget == 'TO_CONTROLLER':
