@@ -51,6 +51,11 @@ class TypewiseTest(unittest.TestCase):
     alertTarget = 'TO_EMAIL'
     temperatureInC = 20
     self.assertTrue(check_and_alert(alertTarget,batteryChar,temperatureInC) == False) 
+    
+    batteryChar['coolingType'] = 'HI_ACTIVE_COOLING'
+    alertTarget = 'TO_SMS'
+    temperatureInC = 50
+    self.assertTrue(check_and_alert(alertTarget,batteryChar,temperatureInC) == None) 
 
   def test_infers_and_limits_as_per_cooling_type(self):
     self.assertTrue(classify_temperature_breach('PASSIVE_COOLING',100) == 'TOO_HIGH')
