@@ -101,13 +101,13 @@ class TypewiseTest(unittest.TestCase):
     self.assertTrue(infer_breach(1.2, 0.1, 1.0) == 'TOO_HIGH')
     self.assertTrue(infer_breach(0.02, 0.1, 1.0) == 'TOO_LOW')
 
-#   def test_sender(self):
-#     self.assertTrue(send_to_controller('TOO_HIGH') == True) 
-#     self.assertTrue(send_to_controller('TOO_LOW') == True) 
-#     self.assertTrue(send_to_controller('NORMAL') == True) 
+  def test_sender(self):
+    self.assertTrue(send_to_controller('TOO_HIGH') == True) 
+    self.assertTrue(send_to_controller('TOO_LOW') == True) 
+    self.assertTrue(send_to_controller('NORMAL') == True) 
 
-#     self.assertTrue(send_to_email('TOO_HIGH') == True) 
-#     self.assertTrue(send_to_email('TOO_LOW') == True) 
-#     self.assertTrue(send_to_email('NORMAL') == False) 
+    self.assertTrue(send_to_email('TOO_HIGH') == True) 
+    self.assertTrue(send_to_email('TOO_LOW') == True) 
+    self.assertTrue(send_to_email('NORMAL') == False) 
 if __name__ == '__main__':
   unittest.main()
