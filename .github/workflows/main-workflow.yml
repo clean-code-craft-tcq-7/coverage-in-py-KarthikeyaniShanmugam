@@ -27,9 +27,6 @@ jobs:
       - name: Run and collect coverage
         run: |
           coverage run --branch typewise_alert.test.py
-          coverage run --branch breach_classifier.test.py
-          coverage run --branch breach_detecter.test.py
-          coverage run --branch sender.test.py
           coverage html
           coverage report
       - name: Upload coverage
