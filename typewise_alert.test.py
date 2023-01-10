@@ -87,7 +87,10 @@ class TypewiseTest(unittest.TestCase):
     self.assertTrue(classify_temperature_breach('MED_ACTIVE_COOLING',-0.01) == 'TOO_LOW') 
     self.assertTrue(classify_temperature_breach('MED_ACTIVE_COOLING',-1) == 'TOO_LOW') 
     self.assertTrue(classify_temperature_breach('MED_ACTIVE_COOLING',-25) == 'TOO_LOW')
+    
     self.assertTrue(classify_temperature_breach('None',-25) == 'TOO_LOW') 
+    self.assertTrue(classify_temperature_breach('None',25) == 'TOO_HIGH') 
+    self.assertTrue(classify_temperature_breach('None',0) == 'NORMAL') 
 
   def test_infers_breach_as_per_limits(self):
     self.assertTrue(infer_breach(20, 50, 100) == 'TOO_LOW')
